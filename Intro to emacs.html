@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-03-30 Thu 01:38 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intro to emacs</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Marie-Helene Burle" />
+<style type="text/css">
+<!--/*--><![CDATA[/*><!--*/
+@media all
+{
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
+}
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+h1 {
+  font-size: 2em;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+figure {
+  margin: 0;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+button,
+input {
+  line-height: normal;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  font-family: 'PT Sans', sans-serif;
+}
+pre,
+code {
+  font-family: 'Inconsolata', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+}
+html {
+  background-color: #eee8d5;
+  color: #4e5e65;
+  margin: 1em;
+}
+body {
+  background-color: #faf9f1;
+  margin: 0 auto;
+  max-width: 23cm;
+  border: 1pt solid #93a1a1;
+  padding: 1em;
+}
+code {
+  background-color: #eee8d5;
+  padding: 2px;
+}
+a {
+  color: #b58900;
+}
+a:visited {
+  color: #cb4b16;
+}
+a:hover {
+  color: #e65719;
+}
+h1 {
+  color: #890c0c;
+}
+h2 {
+  color: #0e6569;
+}
+h3,
+h4,
+h5,
+h6 {
+  color: #313f46;
+}
+pre {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1pt solid #93a1a1;
+  padding: 1em;
+  box-shadow: 5pt 5pt 8pt #eee8d5;
+}
+pre code {
+  background-color: #faf9f1;
+}
+h1 {
+  font-size: 2.8em;
+}
+h2 {
+  font-size: 2.4em;
+}
+h3 {
+  font-size: 1.8em;
+}
+h4 {
+  font-size: 1.4em;
+}
+h5 {
+  font-size: 1.3em;
+}
+h6 {
+  font-size: 1.15em;
+}
+.tag {
+  background-color: #eee8d5;
+  color: #d33682;
+  padding: 0 0.2em;
+}
+.todo,
+.next,
+.done {
+  color: #faf9f1;
+  background-color: #dc322f;
+  padding: 0 0.2em;
+}
+.tag {
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  border-radius: 0.35em;
+}
+.TODO {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #2aa198;
+}
+.NEXT {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #268bd2;
+}
+.ACTIVE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #268bd2;
+}
+.DONE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #859900;
+}
+.WAITING {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #cb4b16;
+}
+.HOLD {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #d33682;
+}
+.NOTE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #d33682;
+}
+.CANCELLED {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #859900;
+}
+
+ /* TOC inspired by http://jashkenas.github.com/coffee-script */
+  #table-of-contents {
+    font-size: 10pt;
+    position: fixed;
+    right: 0em;
+    top: 0em;
+    background: #faf9f1;
+    color: #435156;
+    -webkit-box-shadow: 0 0 1em #777777;
+    -moz-box-shadow: 0 0 1em #777777;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    text-align: right;
+    /* ensure doesn't flow off the screen when expanded */
+    max-height: 80%;
+    overflow: auto; }
+    #table-of-contents h2 {
+      font-size: 10pt;
+      max-width: 8em;
+      font-weight: normal;
+      padding-left: 0.5em;
+      padding-left: 0.5em;
+      padding-top: 0.05em;
+      padding-bottom: 0.05em; }
+    #table-of-contents #text-table-of-contents {
+      display: none;
+      text-align: left; }
+    #table-of-contents:hover #text-table-of-contents {
+      display: block;
+      padding: 0.5em;
+      margin-top: -1.5em; }
+    
+  .rss_box {}
+  .rss_title, rss_title a {}
+  .rss_items {}
+  .rss_item a:link, .rss_item a:visited, .rss_item a:active {}
+  .rss_item a:hover {}
+  .rss_date {}
+
+} /* END OF @media all */
+
+
+@media screen
+{
+  #table-of-contents {
+    float: right;
+    border: 1px solid #CCC;
+    max-width: 35%;
+    overflow: auto;
+  }
+} /* END OF @media screen */
+/*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Intro to emacs</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2b010ab">Installation</a></li>
+<li><a href="#org175a321">The particular case of Windows (of course&#x2026;)</a>
+<ul>
+<li><a href="#orga9bed71">to install a version which runs natively on windows</a></li>
+<li><a href="#orgb207adc">to install a version through Cygwin</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="outline-2" id="meta">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>Marie-Helene Burle</b></td>
+</tr>
+
+<tr>
+<td class="org-left">March 30, 2017</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org2b010ab" class="outline-2">
+<h2 id="org2b010ab">Installation</h2>
+<div class="outline-text-2" id="text-org2b010ab">
+<p>
+Main download page with instructions for Linux, Windows (don't get alarmed and see below) and macOS:
+</p>
+
+<p>
+<a href="https://www.gnu.org/software/emacs/download.html">https://www.gnu.org/software/emacs/download.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org175a321" class="outline-2">
+<h2 id="org175a321">The particular case of Windows (of course&#x2026;)</h2>
+<div class="outline-text-2" id="text-org175a321">
+<p>
+emacs runs best on a Unix system. However, it does run on Windows (see <a href="https://www.gnu.org/software/emacs/manual/efaq-w32.html#Why-Emacs-on-Windows">https://www.gnu.org/software/emacs/manual/efaq-w32.html#Why-Emacs-on-Windows</a> for rationale and further details if you are interested).
+</p>
+
+<p>
+Don't panic if the instructions on the download page don't make sense to you. For windows users, there are several options, the two principal ones being:
+</p>
+</div>
+
+<div id="outline-container-orga9bed71" class="outline-3">
+<h3 id="orga9bed71">to install a version which runs natively on windows</h3>
+<div class="outline-text-3" id="text-orga9bed71">
+<p>
+Download the executable from <a href="https://sourceforge.net/projects/emacsbinw64/">https://sourceforge.net/projects/emacsbinw64/</a> and install as you would with any program. I believe that emacs will then run through MSYS2/MinGW-w64, but you don't have to worry about that. If you only want to install emacs to play with it for for some time and see what you think of it, you might want to chose this route. I ran emacs this way for several months when I first started playing with it. So if nothing else on this page makes sense, don't worry: just install this and it will be just fine.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb207adc" class="outline-3">
+<h3 id="orgb207adc">to install a version through Cygwin</h3>
+<div class="outline-text-3" id="text-orgb207adc">
+<p>
+Cygwin is a Unix-like environment for Windows (see <a href="https://en.wikipedia.org/wiki/Cygwin">https://en.wikipedia.org/wiki/Cygwin</a> for more details). While this way may seem more complicated, if you fall in love with emacs (who wouldn't&#x2026;) and decide to embrace it fully, it will prove easier in the long run as some packages simply don't work on Windows or require a lot of patching and fixing and running after missing dll and all sorts of hassle&#x2026; Running emacs through Cygwin is almost the same as running it through Linux and that makes lots of things just work very smoothly. After a few months in emacs or if you are seriously considering learning it, you will probably want to go this route - or just throw Windows through the window and install Linux altogether :)
+</p>
+
+<p>
+So you will have to install Cygwin and then one emacs package within it:
+</p>
+
+<p>
+Download the executable here <a href="https://cygwin.com/install.html">https://cygwin.com/install.html</a> and follow the instructions. Keep the packages selected by default and add one of the emacs packages (I suggest emacs-w32 since it runs the native windows GUI).
+</p>
+
+<p>
+Side note: once you have discovered Cygwin, you might become interested in adding other packages (for instance git) and start using those through Cygwin instead of how you used to use them before. You will also probably be excited to discover many of the Unix tools like bash, make, grep, etc. Ultimately, you will probably want to just install Linux on your machine!
+</p>
+
+<br>
+<br>
+
+<p>
+<div style="font-size: 90%; background-color: #eee8d5; border: 1pt solid #93a1a1">This page was created using a modified version of a css style by Thomas Frössman (itself based on the solarized color theme from Ethan Schoonover), as well as parts of a modified version of the worg css stylesheet for the table of contents</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
