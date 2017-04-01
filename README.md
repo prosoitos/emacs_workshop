@@ -15,4 +15,4 @@ Come to this introductory level workshop to discover what emacs is and what it c
 
 ### Installation and workshop material
 
-For instructions on how to install emacs as well as some of the material covered during the workshop, visit https://prosoitos.github.io/workshop_intro-to-emacs
+For instructions on how to install emacs as well as some of the material covered during the workshop, visit https://prosoitos.github.io/workshop__intro-to-emacs/
