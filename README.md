@@ -7,7 +7,7 @@ Emacs is (along with Vim) one of the two most powerful text editors out there. T
 
 ### Have I picked your curiosity?
 
-Come to this introductory level workshop to discover what emacs is and what it can do. Even if you do not plan on learning emacs, being exposed to its world could be inspiring and make you reconsider your workflow and work tools. If you intend on playing with emacs during the workshop, come with a version of emacs installed on your machine (see below).
+Come to this introductory level workshop to discover what emacs is and what it can do. Even if you do not plan on learning emacs, being exposed to its world could be inspiring and make you reconsider your workflow and work tools. If you intend on playing with emacs during the workshop, come with a version installed on your machine (see below).
 
 **Date:** May 9, 2017  
 **Time:** 3 pm to 4:30 pm  
