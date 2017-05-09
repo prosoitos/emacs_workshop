@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-05-09 Tue 13:19 -->
+<!-- 2017-05-09 Tue 14:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intro to emacs</title>
@@ -426,62 +426,56 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org02c3d93">Installation</a>
+<li><a href="#org27f2011">Installation</a>
 <ul>
-<li><a href="#orgcf2fa9c">The particular case of Windows (of course&#x2026;)</a>
+<li><a href="#org2d6a7e2">The particular case of Windows (of course&#x2026;)</a>
 <ul>
-<li><a href="#org2e2d389">- to install a version which runs natively on windows</a></li>
-<li><a href="#org3b234a6">- to install a version through Cygwin</a></li>
-<li><a href="#org8c24e9f">- to run linux in a virtualbox or create a linux partition on your drive</a></li>
+<li><a href="#org671110c">- to install a version which runs natively on windows</a></li>
+<li><a href="#org4e7a234">- to install a version through Cygwin</a></li>
+<li><a href="#orga505ce7">- to run linux in a virtualbox or create a linux partition on your drive</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org029b68a">Today's program</a></li>
-<li><a href="#org4a5aab9">Rationale</a>
+<li><a href="#org5ebde32">Today's program</a></li>
+<li><a href="#orga016f63">Rationale</a>
 <ul>
-<li><a href="#orgb63ac67">Why use text?</a></li>
-<li><a href="#org2e16a1d">Why use emacs?</a></li>
+<li><a href="#org6bba9e1">Why use text?</a></li>
+<li><a href="#orgc315940">Why use emacs?</a></li>
 </ul>
 </li>
-<li><a href="#orgda38ef8">Quick demo of some of the things that emacs can do</a></li>
-<li><a href="#org760748d">The emacs world</a>
+<li><a href="#orgba55e43">Quick demo of some of the things that emacs can do</a></li>
+<li><a href="#orgde6d651">The emacs world</a>
 <ul>
-<li><a href="#org390e634">A bit of vocabulary first</a>
+<li><a href="#orgee8155f">A bit of vocabulary first</a></li>
+<li><a href="#orga6bd71c">Modes</a>
 <ul>
-<li><a href="#orgde7236d">The mode line</a></li>
-<li><a href="#orgc8e4747">The minibuffer</a></li>
-<li><a href="#org97cd071">The scratch buffer</a></li>
+<li><a href="#org472bace">Major modes</a></li>
+<li><a href="#org85ed3f4">Minor modes</a></li>
 </ul>
 </li>
-<li><a href="#org393fb30">Modes</a>
+<li><a href="#orgc3f82a9">Keybindings</a>
 <ul>
-<li><a href="#orgf57c697">Major modes</a></li>
-<li><a href="#org204fb93">Minor modes</a></li>
-</ul>
-</li>
-<li><a href="#org23566af">Keybindings</a>
-<ul>
-<li><a href="#orgc565857">Key notation</a></li>
-<li><a href="#org97d70f1">Some useful keybindings to get started</a></li>
+<li><a href="#org559d2bc">Key notation</a></li>
+<li><a href="#org2589e40">Some useful keybindings to get started</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org1d37271">Challenge 1</a></li>
-<li><a href="#org22b6e0d">Customizing your emacs</a>
+<li><a href="#org4abd62e">Challenge 1</a></li>
+<li><a href="#org93669e4">Customizing your emacs</a>
 <ul>
-<li><a href="#orga3f978a">Out of the box emacs: yew&#x2026;</a></li>
-<li><a href="#orgfbf88a6">The customize menu</a></li>
-<li><a href="#org7e8fb6a">The init file</a></li>
+<li><a href="#org6ded137">Out of the box emacs: yew&#x2026;</a></li>
+<li><a href="#orgcd75541">The customize menu</a></li>
+<li><a href="#org9cefba8">The init file</a></li>
 </ul>
 </li>
-<li><a href="#orgc7626d0">Challenge 2</a>
+<li><a href="#orgc6db299">Challenge 2</a>
 <ul>
-<li><a href="#org5948846">Packages</a>
+<li><a href="#orgc8d0c8f">Packages</a>
 <ul>
-<li><a href="#orgf428dc6">A list of packages I couldn't do without:</a></li>
-<li><a href="#org9a4444b">Install packages</a></li>
+<li><a href="#org1137e7a">A list of packages I couldn't do without:</a></li>
+<li><a href="#org3af09e0">Install packages</a></li>
 </ul>
 </li>
 </ul>
@@ -508,9 +502,9 @@ for the JavaScript code in this tag.
 </table>
 </div>
 
-<div id="outline-container-org02c3d93" class="outline-2">
-<h2 id="org02c3d93">Installation</h2>
-<div class="outline-text-2" id="text-org02c3d93">
+<div id="outline-container-org27f2011" class="outline-2">
+<h2 id="org27f2011">Installation</h2>
+<div class="outline-text-2" id="text-org27f2011">
 <p>
 Main download page with instructions for Linux, Windows (don't get alarmed and see below) and macOS:
 </p>
@@ -520,9 +514,9 @@ Main download page with instructions for Linux, Windows (don't get alarmed and s
 </p>
 </div>
 
-<div id="outline-container-orgcf2fa9c" class="outline-3">
-<h3 id="orgcf2fa9c">The particular case of Windows (of course&#x2026;)</h3>
-<div class="outline-text-3" id="text-orgcf2fa9c">
+<div id="outline-container-org2d6a7e2" class="outline-3">
+<h3 id="org2d6a7e2">The particular case of Windows (of course&#x2026;)</h3>
+<div class="outline-text-3" id="text-org2d6a7e2">
 <p>
 emacs runs best on a Unix system. However, it does run on Windows (see <a href="https://www.gnu.org/software/emacs/manual/efaq-w32.html#Why-Emacs-on-Windows">https://www.gnu.org/software/emacs/manual/efaq-w32.html#Why-Emacs-on-Windows</a> for rationale and further details if you are interested).
 </p>
@@ -532,18 +526,18 @@ Don't panic if the instructions on the download page don't make sense to you. Fo
 </p>
 </div>
 
-<div id="outline-container-org2e2d389" class="outline-4">
-<h4 id="org2e2d389">- to install a version which runs natively on windows</h4>
-<div class="outline-text-4" id="text-org2e2d389">
+<div id="outline-container-org671110c" class="outline-4">
+<h4 id="org671110c">- to install a version which runs natively on windows</h4>
+<div class="outline-text-4" id="text-org671110c">
 <p>
 Download the executable from <a href="https://sourceforge.net/projects/emacsbinw64/">https://sourceforge.net/projects/emacsbinw64/</a> and install as you would with any program. I believe that emacs will then run through MSYS2/MinGW-w64, but you don't have to worry about that. If you only want to install emacs to play with it for some time and see what you think of it, you might want to chose this route. I ran emacs this way for several months when I first started playing with it. So if nothing else on this page makes sense, don't worry: just install this - it will feel familiar and it will be just fine.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3b234a6" class="outline-4">
-<h4 id="org3b234a6">- to install a version through Cygwin</h4>
-<div class="outline-text-4" id="text-org3b234a6">
+<div id="outline-container-org4e7a234" class="outline-4">
+<h4 id="org4e7a234">- to install a version through Cygwin</h4>
+<div class="outline-text-4" id="text-org4e7a234">
 <p>
 Cygwin is a Unix-like environment for Windows (see <a href="https://en.wikipedia.org/wiki/Cygwin">https://en.wikipedia.org/wiki/Cygwin</a> for more details). While this way may seem more complicated, if you fall in love with emacs (who wouldn't&#x2026;) and decide to embrace it fully, it will prove easier in the long run as some packages simply don't work on Windows or require a lot of patching and fixing and running after missing dll and all sorts of hassle&#x2026; Running emacs through Cygwin is almost the same as running it through Linux and that makes lots of things just work very smoothly. After a few months in emacs or if you are seriously considering learning it, you will probably want to go this route - or just throw Windows through the window and install Linux altogether :)
 </p>
@@ -562,20 +556,22 @@ Side note: once you have discovered Cygwin, you might become interested in addin
 </div>
 </div>
 
-<div id="outline-container-org8c24e9f" class="outline-4">
-<h4 id="org8c24e9f">- to run linux in a virtualbox or create a linux partition on your drive</h4>
-<div class="outline-text-4" id="text-org8c24e9f">
+<div id="outline-container-orga505ce7" class="outline-4">
+<h4 id="orga505ce7">- to run linux in a virtualbox or create a linux partition on your drive</h4>
+<div class="outline-text-4" id="text-orga505ce7">
 <p>
 See <a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a>
 </p>
+
+<br>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org029b68a" class="outline-2">
-<h2 id="org029b68a">Today's program</h2>
-<div class="outline-text-2" id="text-org029b68a">
+<div id="outline-container-org5ebde32" class="outline-2">
+<h2 id="org5ebde32">Today's program</h2>
+<div class="outline-text-2" id="text-org5ebde32">
 <p>
 Here is our tentative program for today:
 </p>
@@ -594,15 +590,17 @@ If time allows, we will also:
 <li>learn how to configurate emacs (to get rid of the ugliness ;) )</li>
 <li>learn how to install packages</li>
 </ul>
+
+<br>
 </div>
 </div>
 
-<div id="outline-container-org4a5aab9" class="outline-2">
-<h2 id="org4a5aab9">Rationale</h2>
-<div class="outline-text-2" id="text-org4a5aab9">
-</div><div id="outline-container-orgb63ac67" class="outline-3">
-<h3 id="orgb63ac67">Why use text?</h3>
-<div class="outline-text-3" id="text-orgb63ac67">
+<div id="outline-container-orga016f63" class="outline-2">
+<h2 id="orga016f63">Rationale</h2>
+<div class="outline-text-2" id="text-orga016f63">
+</div><div id="outline-container-org6bba9e1" class="outline-3">
+<h3 id="org6bba9e1">Why use text?</h3>
+<div class="outline-text-3" id="text-org6bba9e1">
 <ul class="org-ul">
 <li>Makes you look cool</li>
 </ul>
@@ -646,9 +644,9 @@ If time allows, we will also:
 </div>
 </div>
 
-<div id="outline-container-org2e16a1d" class="outline-3">
-<h3 id="org2e16a1d">Why use emacs?</h3>
-<div class="outline-text-3" id="text-org2e16a1d">
+<div id="outline-container-orgc315940" class="outline-3">
+<h3 id="orgc315940">Why use emacs?</h3>
+<div class="outline-text-3" id="text-orgc315940">
 <p>
 If you decide to use text, you need a text editor. There are many out there, ranging from utterly basic (think Notepad&#x2026;), to more sophisticated (e.g. Notepad++, Nano, Sublime Text&#x2026;) to really complex (Vim, emacs). Some are proprietary (e.g. Sublime Text), many are free and open source (e.g. Notepad++, Vim, emacs&#x2026;).
 </p>
@@ -668,13 +666,15 @@ Have a look at this:
 <p>
 <a href="https://www.openhub.net/p/emacs">https://www.openhub.net/p/emacs</a>
 </p>
+
+<br>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgda38ef8" class="outline-2">
-<h2 id="orgda38ef8">Quick demo of some of the things that emacs can do</h2>
-<div class="outline-text-2" id="text-orgda38ef8">
+<div id="outline-container-orgba55e43" class="outline-2">
+<h2 id="orgba55e43">Quick demo of some of the things that emacs can do</h2>
+<div class="outline-text-2" id="text-orgba55e43">
 <p>
 What can you do with emacs? Pretty much everything except your laundry&#x2026;
 </p>
@@ -699,6 +699,8 @@ I will show very quickly how I use emacs for:
 (oh&#x2026; and of course, heritage of the era when emacs was created, you can play Tetris).
 </p>
 
+<br>
+
 <p>
 <font size="6">Let's get started!!</font>
 </p>
@@ -707,17 +709,17 @@ I will show very quickly how I use emacs for:
 </div>
 </div>
 
-<div id="outline-container-org760748d" class="outline-2">
-<h2 id="org760748d">The emacs world</h2>
-<div class="outline-text-2" id="text-org760748d">
+<div id="outline-container-orgde6d651" class="outline-2">
+<h2 id="orgde6d651">The emacs world</h2>
+<div class="outline-text-2" id="text-orgde6d651">
 <p>
 Emacs pre-dates all modern softwares (with the exception of Vi) and thus has a different vocabulary and different keybindings. It may seem totally overwhelming at first, but it is actually really quick to get a hand of it (and then you will want emacs keybindings everywhere!).
 </p>
 </div>
 
-<div id="outline-container-org390e634" class="outline-3">
-<h3 id="org390e634">A bit of vocabulary first</h3>
-<div class="outline-text-3" id="text-org390e634">
+<div id="outline-container-orgee8155f" class="outline-3">
+<h3 id="orgee8155f">A bit of vocabulary first</h3>
+<div class="outline-text-3" id="text-orgee8155f">
 <pre class="example">
 kill = cut
 yank = paste
@@ -732,27 +734,27 @@ face = style
 <p>
 Thus, a frame can contain one or several windows. The same buffer can appear in one or several windows and in one or several frames. A window can only contain one buffer.
 </p>
+
+<p>
+Let's have a look together at:
+</p>
+
+<ul class="org-ul">
+<li>The mode line</li>
+
+<li>The minibuffer</li>
+
+<li>The scratch buffer</li>
+</ul>
+</div>
 </div>
 
-<div id="outline-container-orgde7236d" class="outline-4">
-<h4 id="orgde7236d">The mode line</h4>
-</div>
-
-<div id="outline-container-orgc8e4747" class="outline-4">
-<h4 id="orgc8e4747">The minibuffer</h4>
-</div>
-
-<div id="outline-container-org97cd071" class="outline-4">
-<h4 id="org97cd071">The scratch buffer</h4>
-</div>
-</div>
-
-<div id="outline-container-org393fb30" class="outline-3">
-<h3 id="org393fb30">Modes</h3>
-<div class="outline-text-3" id="text-org393fb30">
-</div><div id="outline-container-orgf57c697" class="outline-4">
-<h4 id="orgf57c697">Major modes</h4>
-<div class="outline-text-4" id="text-orgf57c697">
+<div id="outline-container-orga6bd71c" class="outline-3">
+<h3 id="orga6bd71c">Modes</h3>
+<div class="outline-text-3" id="text-orga6bd71c">
+</div><div id="outline-container-org472bace" class="outline-4">
+<h4 id="org472bace">Major modes</h4>
+<div class="outline-text-4" id="text-org472bace">
 <p>
 Major modes correspond to the language you are using. There can only be one major mode at a time.
 </p>
@@ -772,9 +774,9 @@ examples major modes:
 </div>
 </div>
 
-<div id="outline-container-org204fb93" class="outline-4">
-<h4 id="org204fb93">Minor modes</h4>
-<div class="outline-text-4" id="text-org204fb93">
+<div id="outline-container-org85ed3f4" class="outline-4">
+<h4 id="org85ed3f4">Minor modes</h4>
+<div class="outline-text-4" id="text-org85ed3f4">
 <p>
 Minor modes add options and there can be many minor modes simultaneously.
 </p>
@@ -792,12 +794,12 @@ example minor mode:
 </div>
 </div>
 
-<div id="outline-container-org23566af" class="outline-3">
-<h3 id="org23566af">Keybindings</h3>
-<div class="outline-text-3" id="text-org23566af">
-</div><div id="outline-container-orgc565857" class="outline-4">
-<h4 id="orgc565857">Key notation</h4>
-<div class="outline-text-4" id="text-orgc565857">
+<div id="outline-container-orgc3f82a9" class="outline-3">
+<h3 id="orgc3f82a9">Keybindings</h3>
+<div class="outline-text-3" id="text-orgc3f82a9">
+</div><div id="outline-container-org559d2bc" class="outline-4">
+<h4 id="org559d2bc">Key notation</h4>
+<div class="outline-text-4" id="text-org559d2bc">
 <pre class="example">
 C = control
 M = meta (alt)
@@ -820,10 +822,10 @@ Lots of C-c C-x etc&#x2026;
 </div>
 </div>
 
-<div id="outline-container-org97d70f1" class="outline-4">
-<h4 id="org97d70f1">Some useful keybindings to get started</h4>
-<div class="outline-text-4" id="text-org97d70f1">
-</div><ul class="org-ul"><li><a id="orga60d909"></a><b>Cancel</b><br /><div class="outline-text-5" id="text-orga60d909">
+<div id="outline-container-org2589e40" class="outline-4">
+<h4 id="org2589e40">Some useful keybindings to get started</h4>
+<div class="outline-text-4" id="text-org2589e40">
+</div><ul class="org-ul"><li><a id="org036b1e3"></a><b>Cancel</b><br /><div class="outline-text-5" id="text-org036b1e3">
 <p>
 The first key binding to learn is:
 </p>
@@ -839,7 +841,7 @@ It will get you out of many things you started by accident.
 <br>
 </div></li>
 
-<li><a id="org45627d4"></a><b>Find (open) a file</b><br /><div class="outline-text-5" id="text-org45627d4">
+<li><a id="org12fc8c8"></a><b>Find (open) a file</b><br /><div class="outline-text-5" id="text-org12fc8c8">
 <pre class="example">
 C-x C-f
 </pre>
@@ -847,7 +849,7 @@ C-x C-f
 <br>
 </div></li>
 
-<li><a id="org1dd7f0c"></a><b>Write (save) a file</b><br /><div class="outline-text-5" id="text-org1dd7f0c">
+<li><a id="orgf3558ac"></a><b>Write (save) a file</b><br /><div class="outline-text-5" id="text-orgf3558ac">
 <pre class="example">
 C-x C-s
 </pre>
@@ -859,7 +861,9 @@ Note that, in order to create a file, you must first "find" it, then "write" (sa
 <br>
 </div></li>
 
-<li><a id="orgc5e8ca4"></a><b>Kill/yank (copy/cut/paste)</b><br /><div class="outline-text-5" id="text-orgc5e8ca4">
+<li><a id="orgecf9b61"></a><b>Kill/yank (copy/cut/paste)</b><br /><div class="outline-text-5" id="text-orgecf9b61">
+<br>
+
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -922,7 +926,7 @@ Yank next allows you to yank (paste) not the last thing that got killed (cut or 
 <br>
 </div></li>
 
-<li><a id="org2823dc2"></a><b>Move around a file</b><br /><div class="outline-text-5" id="text-org2823dc2">
+<li><a id="org8fa5dfc"></a><b>Move around a file</b><br /><div class="outline-text-5" id="text-org8fa5dfc">
 <p>
 Here are few examples of how you can navigate a file in emacs while never moving your hands off the keyboard and wihtout having to reach for?those awkwardly placed arrow keys:
 </p>
@@ -952,7 +956,7 @@ Keybindings exit to move forward and backward sentences, paragraphs, functions, 
 <br>
 </div></li>
 
-<li><a id="org6099f66"></a><b>Delete</b><br /><div class="outline-text-5" id="text-org6099f66">
+<li><a id="org34b05dd"></a><b>Delete</b><br /><div class="outline-text-5" id="text-org34b05dd">
 <pre class="example">
 C-d = delete the character to the right
 
@@ -972,7 +976,7 @@ Many other keybindings to kill sentences, etc, as you can imagine.
 <br>
 </div></li>
 
-<li><a id="orgea32525"></a><b>Search</b><br /><div class="outline-text-5" id="text-orgea32525">
+<li><a id="org870c8d9"></a><b>Search</b><br /><div class="outline-text-5" id="text-org870c8d9">
 <pre class="example">
 C-s = search forward
 
@@ -982,7 +986,7 @@ C-r = search backward
 <br>
 </div></li>
 
-<li><a id="org22a6755"></a><b>Undo (and undo the undo)</b><br /><div class="outline-text-5" id="text-org22a6755">
+<li><a id="orgf1e2c4e"></a><b>Undo (and undo the undo)</b><br /><div class="outline-text-5" id="text-orgf1e2c4e">
 <p>
 In emacs, you can undo until the start of the current session (even if you have saved your file). This is really convenient.
 </p>
@@ -1008,17 +1012,21 @@ C-g C-/
 <br>
 </div></li>
 
-<li><a id="org4354502"></a><b>Mark</b><br /><div class="outline-text-5" id="text-org4354502">
+<li><a id="org5e1d040"></a><b>Mark</b><br /><div class="outline-text-5" id="text-org5e1d040">
 <br>
-</div>
 
-<ul class="org-ul"><li><a id="org4f898be"></a>to select<br /><div class="outline-text-6" id="text-org4f898be">
+<ul class="org-ul">
+<li>to select</li>
+</ul>
+
 <pre class="example">
 C-SPC
 </pre>
-</div></li>
 
-<li><a id="org99da012"></a>to jump back<br /><div class="outline-text-6" id="text-org99da012">
+<ul class="org-ul">
+<li>to jump back</li>
+</ul>
+
 <pre class="example">
 C-SPC twice
 
@@ -1026,15 +1034,15 @@ C-u C-SPC to jump back
 </pre>
 
 <br>
-</div></li></ul></li></ul>
+</div></li></ul>
 </div>
 </div>
 </div>
 
 
-<div id="outline-container-org1d37271" class="outline-2">
-<h2 id="org1d37271">Challenge 1</h2>
-<div class="outline-text-2" id="text-org1d37271">
+<div id="outline-container-org4abd62e" class="outline-2">
+<h2 id="org4abd62e">Challenge 1</h2>
+<div class="outline-text-2" id="text-org4abd62e">
 <pre class="example">
 For this workshop, you will try not to use the mouse nor the arrow keys of your keyboard.
 
@@ -1092,21 +1100,21 @@ All mimsy were the borogoves,
 </div>
 </div>
 
-<div id="outline-container-org22b6e0d" class="outline-2">
-<h2 id="org22b6e0d">Customizing your emacs</h2>
-<div class="outline-text-2" id="text-org22b6e0d">
-</div><div id="outline-container-orga3f978a" class="outline-3">
-<h3 id="orga3f978a">Out of the box emacs: yew&#x2026;</h3>
-<div class="outline-text-3" id="text-orga3f978a">
+<div id="outline-container-org93669e4" class="outline-2">
+<h2 id="org93669e4">Customizing your emacs</h2>
+<div class="outline-text-2" id="text-org93669e4">
+</div><div id="outline-container-org6ded137" class="outline-3">
+<h3 id="org6ded137">Out of the box emacs: yew&#x2026;</h3>
+<div class="outline-text-3" id="text-org6ded137">
 <p>
 Not exactly pretty&#x2026; so we will try to make it look nicer
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgfbf88a6" class="outline-3">
-<h3 id="orgfbf88a6">The customize menu</h3>
-<div class="outline-text-3" id="text-orgfbf88a6">
+<div id="outline-container-orgcd75541" class="outline-3">
+<h3 id="orgcd75541">The customize menu</h3>
+<div class="outline-text-3" id="text-orgcd75541">
 <p>
 A Gui way to customize emacs&#x2026;
 </p>
@@ -1131,9 +1139,9 @@ We will change the default face ("M-x customize-face default")
 </div>
 </div>
 
-<div id="outline-container-org7e8fb6a" class="outline-3">
-<h3 id="org7e8fb6a">The init file</h3>
-<div class="outline-text-3" id="text-org7e8fb6a">
+<div id="outline-container-org9cefba8" class="outline-3">
+<h3 id="org9cefba8">The init file</h3>
+<div class="outline-text-3" id="text-org9cefba8">
 <p>
 When emacs starts, it looks for the presence of an init file in its path. You can write all the customization you want in this file. It is thus much more flexible than the customize menu. This file contains code written in the language used by emacs: emacs lisp. But don't worry: you don't have to learn a new language to customize emacs. The internet is full of information, function and codes already written that you can use with limited twicking.
 </p>
@@ -1149,9 +1157,9 @@ When you first intall emacs, the init file does not exist. You must thus create 
 </div>
 </div>
 
-<div id="outline-container-orgc7626d0" class="outline-2">
-<h2 id="orgc7626d0">Challenge 2</h2>
-<div class="outline-text-2" id="text-orgc7626d0">
+<div id="outline-container-orgc6db299" class="outline-2">
+<h2 id="orgc6db299">Challenge 2</h2>
+<div class="outline-text-2" id="text-orgc6db299">
 <pre class="example">
 You will create an init file called ".emacs" in the home directory used by emacs (this is where emacs will offer you to find a file by default). Navigate your computer the way you are used to and make sure the file exists.
 </pre>
@@ -1163,12 +1171,12 @@ You can now start adding emacs-lisp code in this file to have emacs do everythin
 <br>
 </div>
 
-<div id="outline-container-org5948846" class="outline-3">
-<h3 id="org5948846">Packages</h3>
-<div class="outline-text-3" id="text-org5948846">
-</div><div id="outline-container-orgf428dc6" class="outline-4">
-<h4 id="orgf428dc6">A list of packages I couldn't do without:</h4>
-<div class="outline-text-4" id="text-orgf428dc6">
+<div id="outline-container-orgc8d0c8f" class="outline-3">
+<h3 id="orgc8d0c8f">Packages</h3>
+<div class="outline-text-3" id="text-orgc8d0c8f">
+</div><div id="outline-container-org1137e7a" class="outline-4">
+<h4 id="org1137e7a">A list of packages I couldn't do without:</h4>
+<div class="outline-text-4" id="text-org1137e7a">
 <ul class="org-ul">
 <li>(org of course: but it is now part of emacs)</li>
 <li>ESS</li>
@@ -1193,9 +1201,9 @@ This is just a short list. And of course, there are many other amazing packages 
 </div>
 </div>
 
-<div id="outline-container-org9a4444b" class="outline-4">
-<h4 id="org9a4444b">Install packages</h4>
-<div class="outline-text-4" id="text-org9a4444b">
+<div id="outline-container-org3af09e0" class="outline-4">
+<h4 id="org3af09e0">Install packages</h4>
+<div class="outline-text-4" id="text-org3af09e0">
 <p>
 M-x list-packages
 </p>
