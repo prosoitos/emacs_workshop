@@ -1,0 +1,502 @@
+#+OPTIONS: title:t date:t author:t email:t
+#+OPTIONS: toc:t h:3 num:nil |:t todo:nil
+#+OPTIONS: *:t -:t ::t <:t \n:nil e:t creator:nil
+#+OPTIONS: f:t inline:t tasks:t tex:t timestamp:t
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: html-style:t
+
+#+TODO: COMMENT | 
+
+#+TITLE:   Intro to emacs
+#+DATE:	   2017-05-09
+#+AUTHOR:  Marie-Helene Burle
+#+EMAIL:   msb2@sfu.ca
+
+#+HTML: <div class="outline-2" id="meta">
+| *{{{author}}}*           |
+| {{{time(%B %d\, %Y)}}} |
+#+HTML: </div>
+
+* Installation
+
+Main download page with instructions for Linux, Windows (don't get alarmed and see below) and macOS:
+
+https://www.gnu.org/software/emacs/download.html
+
+** The particular case of Windows (of course...)
+
+emacs runs best on a Unix system. However, it does run on Windows (see https://www.gnu.org/software/emacs/manual/efaq-w32.html#Why-Emacs-on-Windows for rationale and further details if you are interested).
+
+Don't panic if the instructions on the download page don't make sense to you. For windows users, there are several options, including:
+
+*** - to install a version which runs natively on windows
+
+Download the executable from https://sourceforge.net/projects/emacsbinw64/ and install as you would with any program. I believe that emacs will then run through MSYS2/MinGW-w64, but you don't have to worry about that. If you only want to install emacs to play with it for some time and see what you think of it, you might want to chose this route. I ran emacs this way for several months when I first started playing with it. So if nothing else on this page makes sense, don't worry: just install this - it will feel familiar and it will be just fine.
+
+*** - to install a version through Cygwin
+
+Cygwin is a Unix-like environment for Windows (see https://en.wikipedia.org/wiki/Cygwin for more details). While this way may seem more complicated, if you fall in love with emacs (who wouldn't...) and decide to embrace it fully, it will prove easier in the long run as some packages simply don't work on Windows or require a lot of patching and fixing and running after missing dll and all sorts of hassle... Running emacs through Cygwin is almost the same as running it through Linux and that makes lots of things just work very smoothly. After a few months in emacs or if you are seriously considering learning it, you will probably want to go this route - or just throw Windows through the window and install Linux altogether :)
+
+So you will have to install Cygwin and then one emacs package within it:
+
+Download the executable here https://cygwin.com/install.html and follow the instructions. Keep the packages selected by default and add one of the emacs packages (I suggest emacs-w32 since it runs the native windows GUI).
+
+Side note: once you have discovered Cygwin, you might become interested in adding other packages (for instance git) and start using those through Cygwin instead of how you used to use them before. You will also probably be excited to discover many of the Unix tools like bash, make, grep, etc. Ultimately, you will probably want to just install Linux on your machine!
+
+*** - to run linux in a virtualbox or create a linux partition on your drive
+
+See https://www.virtualbox.org/
+
+#+HTML: <br>
+
+* Today's program
+
+Here is our tentative program for today:
+
+- make sure everybody managed to install a working version of emacs
+- start emacs and try to survive the ugly default configuration
+- before you run away screaming, I will show you what emacs can look like after a bit of love
+- familiarize ourselves with the keybindings (fun!)
+ 
+If time allows, we will also:
+- learn how to configurate emacs (to get rid of the ugliness ;) )
+- learn how to install packages
+# - learn to install a package (we will use ESS as an example)
+# - for those of you who are familiar with R, we will run R into ESS
+
+#+HTML: <br>
+
+* Rationale
+
+** Why use text?
+
+- Makes you look cool
+
+\nbsp \nbsp \nbsp \nbsp (Well... maybe)
+
+- You can use version control
+
+\nbsp \nbsp \nbsp \nbsp Not just on your code, but on your papers, thesis, essays, books...
+
+- Freedom
+
+\nbsp \nbsp \nbsp \nbsp You are free from the constraints imposed by people who built the software you are using.\\
+\nbsp \nbsp \nbsp \nbsp You can create your own code to customize your own things (Think MS Word frustrations) :P
+
+- Total inter-compatibility
+
+\nbsp \nbsp \nbsp \nbsp Nothing is proprietary. Every software can read text files.
+
+- Free (again)
+
+\nbsp \nbsp \nbsp \nbsp But as in no money this time.
+
+** Why use emacs?
+
+If you decide to use text, you need a text editor. There are many out there, ranging from utterly basic (think Notepad...), to more sophisticated (e.g. Notepad++, Nano, Sublime Text...) to really complex (Vim, emacs). Some are proprietary (e.g. Sublime Text), many are free and open source (e.g. Notepad++, Vim, emacs...).
+
+Emacs and Vim are the two most powerful of the lot. Emacs comes with a plethora of packages that will allow you to do just about anything.
+
+And it has a huge community of developers which keeps pushing it further. Being an old software does certainly not make it outdated!!!!
+
+Have a look at this:
+
+https://www.openhub.net/p/emacs
+
+#+HTML: <br>
+
+* Quick demo of some of the things that emacs can do
+
+What can you do with emacs? Pretty much everything except your laundry...
+
+I will show very quickly how I use emacs for:
+
+- emails
+- note taking
+- agenda
+- todo lists
+- edit directories
+- R
+- thesis/papers/book writing
+- websites
+- snippets everywhere! :)
+
+(oh... and of course, heritage of the era when emacs was created, you can play Tetris).
+
+#+HTML: <br>
+
+@@html:<font size="6">@@Let's get started!!@@html:</font>@@
+
+#+HTML: <br>
+
+* The emacs world
+
+Emacs pre-dates all modern softwares (with the exception of Vi) and thus has a different vocabulary and different keybindings. It may seem totally overwhelming at first, but it is actually really quick to get a hand of it (and then you will want emacs keybindings everywhere!).
+
+** A bit of vocabulary first
+
+#+BEGIN_EXAMPLE
+kill = cut
+
+yank = paste
+
+find file = open or create a file
+
+point = cursor
+
+buffer = the object that holds your file, your directory listing, etc.
+
+window = the physical location where a buffer is displayed
+
+frame = graphical display of emacs
+
+face = style
+#+END_EXAMPLE
+
+Thus, a frame can contain one or several windows. The same buffer can appear in one or several windows and in one or several frames. A window can only contain one buffer.
+
+Let's have a look together at:
+
+- The mode line
+
+- The minibuffer
+
+- The scratch buffer
+
+** Modes
+
+*** Major modes
+
+Major modes correspond to the language you are using. There can only be one major mode at a time.
+
+#+BEGIN_QUOTE
+examples major modes:
+
+- org mode - awesomeness that I will introduce in 2 weeks
+- text mode
+- emacs lisp mode
+- ESS (R) mode
+#+END_QUOTE
+
+*** Minor modes
+
+Minor modes add options and there can be many minor modes simultaneously.
+
+#+BEGIN_QUOTE
+example minor mode:
+
+- linun mode
+#+END_QUOTE
+
+** Keybindings
+
+*** Key notation
+
+#+BEGIN_EXAMPLE
+C = control
+
+M = meta (alt)
+
+S = shift
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+C-c means "press control and the letter c at the same time"
+
+C-c C-x means "press control-c THEN control x"
+#+END_EXAMPLE
+
+emacs key combinations...
+
+Lots of C-c C-x etc...
+
+*** Some useful keybindings to get started
+
+**** *Cancel*
+
+The first key binding to learn is:
+
+#+BEGIN_EXAMPLE
+C-g (press control and g at the same time) = quit
+#+END_EXAMPLE
+
+It will get you out of many things you started by accident.
+
+#+HTML: <br>
+
+**** *Find (open) a file*
+
+#+BEGIN_EXAMPLE
+C-x C-f
+#+END_EXAMPLE
+
+#+HTML: <br>
+
+**** *Write (save) a file*
+
+#+BEGIN_EXAMPLE
+C-x C-s
+#+END_EXAMPLE
+
+Note that, in order to create a file, you must first "find" it, then "write" (save) it. Otherwise, all you have created is a buffer, not a file. And it will disappear when you close emacs.
+
+#+HTML: <br>
+
+**** *Kill/yank (copy/cut/paste)*
+
+#+HTML: <br>
+
+| common name | common key | emacs name     | emacs key |
+|-------------+------------+----------------+-----------|
+| cut         | C-x        | kill           | C-w       |
+| copy        | C-c        | kill-ring-save | M-w       |
+| paste       | C-v        | yank           | C-y       |
+| -           | -          | yank next      | M-y       |
+
+(from: https://www.emacswiki.org/emacs/CopyAndPaste)
+
+Yank next allows you to yank (paste) not the last thing that got killed (cut or copied) but the thing before that.
+
+#+HTML: <br>
+
+**** *Move around a file*
+
+Here are few examples of how you can navigate a file in emacs while never moving your hands off the keyboard and wihtout having to reach for?those awkwardly placed arrow keys:
+
+#+BEGIN_EXAMPLE
+C-f = move forward one character
+
+C-b = move backward one character 
+
+M-f = move forward one word
+
+M-b = move backward one word
+
+C-n = move down to the next line
+
+C-p = move up to the previous line
+
+C-a = move to the beginning of the line
+
+C-e = move to the end of the line
+#+END_EXAMPLE
+
+Keybindings exit to move forward and backward sentences, paragraphs, functions, pages, etc.
+
+#+HTML: <br>
+
+**** *Delete*
+
+#+BEGIN_EXAMPLE
+C-d = delete the character to the right
+
+DEL = delete the character to the left
+
+M-d = kill the word to the right
+
+M-DEL = kill the word to the left
+
+C-k = kill to the end of the line
+#+END_EXAMPLE
+
+Many other keybindings to kill sentences, etc, as you can imagine.
+
+#+HTML: <br>
+
+**** *Search*
+
+#+BEGIN_EXAMPLE
+C-s = search forward
+
+C-r = search backward
+#+END_EXAMPLE
+
+#+HTML: <br>
+
+**** *Undo (and undo the undo)*
+
+In emacs, you can undo until the start of the current session (even if you have saved your file). This is really convenient.
+
+#+BEGIN_EXAMPLE
+C-/ = undo
+#+END_EXAMPLE
+
+There is no redo (!!). Something a bit unsettling at first. But it soon becomes really intuitive.
+
+To "redo", you "undo" the "undo".
+
+#+BEGIN_EXAMPLE
+C-g C-/
+
+(C-g to break the chain of undos followed by a new undo, will do... a redo)
+#+END_EXAMPLE
+
+#+HTML: <br>
+
+**** *Mark*
+
+#+HTML: <br>
+
+- to select
+
+#+BEGIN_EXAMPLE
+C-SPC
+#+END_EXAMPLE
+
+- to jump back
+
+#+BEGIN_EXAMPLE
+C-SPC twice
+
+C-u C-SPC to jump back
+#+END_EXAMPLE
+
+#+HTML: <br>
+
+
+* Challenge 1
+
+#+BEGIN_EXAMPLE
+For this workshop, you will try not to use the mouse nor the arrow keys of your keyboard.
+
+1. Create a file (anywhere you want on your laptop) and name it "jabberwocky.txt"
+
+2. Copy the poem below and yank it in your new file
+
+3. Kill the 1st paragraph and yank it at the end of the poem
+
+4. Kill the line that contains the word "bird"
+
+5. Undo that last kill
+
+6. Redo that last kill
+
+Jabberwocky, by Lewis Carroll:
+
+’Twas brillig, and the slithy toves 
+      Did gyre and gimble in the wabe: 
+All mimsy were the borogoves, 
+      And the mome raths outgrabe. 
+
+“Beware the Jabberwock, my son! 
+      The jaws that bite, the claws that catch! 
+Beware the Jubjub bird, and shun 
+      The frumious Bandersnatch!” 
+
+He took his vorpal sword in hand; 
+      Long time the manxome foe he sought— 
+So rested he by the Tumtum tree 
+      And stood awhile in thought. 
+
+And, as in uffish thought he stood, 
+      The Jabberwock, with eyes of flame, 
+Came whiffling through the tulgey wood, 
+      And burbled as it came! 
+
+One, two! One, two! And through and through 
+      The vorpal blade went snicker-snack! 
+He left it dead, and with its head 
+      He went galumphing back. 
+
+“And hast thou slain the Jabberwock? 
+      Come to my arms, my beamish boy! 
+O frabjous day! Callooh! Callay!” 
+      He chortled in his joy. 
+
+’Twas brillig, and the slithy toves 
+      Did gyre and gimble in the wabe: 
+All mimsy were the borogoves, 
+      And the mome raths outgrabe.
+#+END_EXAMPLE
+
+#+HTML: <br>
+
+* Customizing your emacs
+
+** Out of the box emacs: yew...
+
+Not exactly pretty... so we will try to make it look nicer
+
+** The customize menu
+
+A Gui way to customize emacs...
+
+Can be accessed by:
+
+M-x followed by
+
+customize-group
+customize-variable
+customize-face
+
+We will change the default face ("M-x customize-face default")
+
+** The init file
+
+When emacs starts, it looks for the presence of an init file in its path. You can write all the customization you want in this file. It is thus much more flexible than the customize menu. This file contains code written in the language used by emacs: emacs lisp. But don't worry: you don't have to learn a new language to customize emacs. The internet is full of information, function and codes already written that you can use with limited twicking.
+
+When you first intall emacs, the init file does not exist. You must thus create it by "finding" it (remember that you also have to save it before the file exists). This file is commonly called ".emacs" (note the dot).
+
+#+HTML: <br>
+
+#+HTML: <br>
+
+* Challenge 2
+
+#+BEGIN_EXAMPLE
+You will create an init file called ".emacs" in the home directory used by emacs (this is where emacs will offer you to find a file by default). Navigate your computer the way you are used to and make sure the file exists.
+#+END_EXAMPLE
+
+You can now start adding emacs-lisp code in this file to have emacs do everything you want... :)
+
+# In order to install ESS later in this workshop (and all the cool packages you will want to install later), copy and paste this in your .emacs file:
+
+# #+BEGIN_QUOTE
+# ;; MELPA
+# (require 'package)
+# (add-to-list 'package-archives
+# 	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+# ;; ELPA
+# (add-to-list 'package-archives
+# 	     '("org" . "http://orgmode.org/elpa/") t)
+
+# ;; GNU
+# (add-to-list 'package-archives
+# 	     '("gnu" . "http://elpa.gnu.org/packages/"))
+# #+END_QUOTE
+
+#+HTML: <br>
+
+** Packages
+
+*** A list of packages I couldn't do without:
+
+- (org of course: but it is now part of emacs)
+- ESS
+- yasnippet
+- outshine
+- bookmark+
+- calfw
+- ido-vertical-mode
+- smex
+- flx
+- flx-ido
+- adaptive-wrap
+- which-key
+- swiper
+- popwin
+- ...
+
+This is just a short list. And of course, there are many other amazing packages out there that I don't need for my use of emacs or that I haven't yet explored.
+
+*** Install packages
+
+M-x list-packages
+
+# ** Example: ESS
+
+#+HTML: <br>
+#+HTML: <br>
+
+@@html:<div style="font-size: 90%; background-color: #eee8d5; border: 1pt solid #93a1a1">@@This page was created using a modified version of a css style by Thomas Frössman (itself based on the solarized color theme from Ethan Schoonover), as well as parts of a modified version of the worg css stylesheet for the table of contents@@html:</div>@@
