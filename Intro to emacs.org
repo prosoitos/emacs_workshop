@@ -8,14 +8,9 @@
 #+TODO: COMMENT | 
 
 #+TITLE:   Intro to emacs
-#+DATE:	   2017-05-09
+#+DATE:	   {{{time(%B %d\, %Y)}}}
 #+AUTHOR:  Marie-Helene Burle
 #+EMAIL:   msb2@sfu.ca
-
-#+HTML: <div class="outline-2" id="meta">
-| *{{{author}}}*           |
-| {{{time(%B %d\, %Y)}}} |
-#+HTML: </div>
 
 * Installation
 
