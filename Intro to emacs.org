@@ -14,33 +14,31 @@
 
 * Installation
 
-Main download page with instructions for Linux, Windows (don't get alarmed and see below) and macOS:
-
-https://www.gnu.org/software/emacs/download.html
+You can find the download page with instructions for Linux, Windows (don't get alarmed and see below) and macOS [[https://www.gnu.org/software/emacs/download.html][here]].
 
 ** The particular case of Windows (of course...)
 
-emacs runs best on a Unix system. However, it does run on Windows (see https://www.gnu.org/software/emacs/manual/efaq-w32.html#Why-Emacs-on-Windows for rationale and further details if you are interested).
+emacs runs best on a Unix system. However, [[https://www.gnu.org/software/emacs/manual/efaq-w32.html#Why-Emacs-on-Windows][it does run on Windows]].
 
 Don't panic if the instructions on the download page don't make sense to you. For windows users, there are several options, including:
 
 *** - to install a version which runs natively on windows
 
-Download the executable from https://sourceforge.net/projects/emacsbinw64/ and install as you would with any program. I believe that emacs will then run through MSYS2/MinGW-w64, but you don't have to worry about that. If you only want to install emacs to play with it for some time and see what you think of it, you might want to chose this route. I ran emacs this way for several months when I first started playing with it. So if nothing else on this page makes sense, don't worry: just install this - it will feel familiar and it will be just fine.
+Download the [[https://sourceforge.net/projects/emacsbinw64/][executable]] and install as you would with any program. I believe that emacs will then run through MSYS2/MinGW-w64, but you don't have to worry about that. If you only want to install emacs to play with it for some time and see what you think of it, you might want to chose this route. I ran emacs this way for several months when I first started playing with it. So if nothing else on this page makes sense, don't worry: just install this - it will feel familiar and it will be just fine.
 
 *** - to install a version through Cygwin
 
-Cygwin is a Unix-like environment for Windows (see https://en.wikipedia.org/wiki/Cygwin for more details). While this way may seem more complicated, if you fall in love with emacs (who wouldn't...) and decide to embrace it fully, it will prove easier in the long run as some packages simply don't work on Windows or require a lot of patching and fixing and running after missing dll and all sorts of hassle... Running emacs through Cygwin is almost the same as running it through Linux and that makes lots of things just work very smoothly. After a few months in emacs or if you are seriously considering learning it, you will probably want to go this route - or just throw Windows through the window and install Linux altogether :)
+[[https://en.wikipedia.org/wiki/Cygwin][Cygwin]] is a Unix-like environment for Windows. While this way may seem more complicated, if you fall in love with emacs (who wouldn't...) and decide to embrace it fully, it will prove easier in the long run as some packages simply don't work on Windows or require a lot of patching and fixing and running after missing dll and all sorts of hassle... Running emacs through Cygwin is almost the same as running it through Linux and that makes lots of things just work very smoothly. After a few months in emacs or if you are seriously considering learning it, you will probably want to go this route - or just throw Windows through the window and install Linux altogether :)
 
 So you will have to install Cygwin and then one emacs package within it:
 
-Download the executable here https://cygwin.com/install.html and follow the instructions. Keep the packages selected by default and add one of the emacs packages (I suggest emacs-w32 since it runs the native windows GUI).
+Download the [[https://cygwin.com/install.html][executable]] and follow the instructions. Keep the packages selected by default and add one of the emacs packages (I suggest emacs-w32 since it runs the native windows GUI).
 
 Side note: once you have discovered Cygwin, you might become interested in adding other packages (for instance git) and start using those through Cygwin instead of how you used to use them before. You will also probably be excited to discover many of the Unix tools like bash, make, grep, etc. Ultimately, you will probably want to just install Linux on your machine!
 
 *** - to run linux in a virtualbox or create a linux partition on your drive
 
-See https://www.virtualbox.org/
+See [[https://www.virtualbox.org/][here]].
 
 #+HTML: <br>
 
@@ -94,9 +92,7 @@ Emacs and Vim are the two most powerful of the lot. Emacs comes with a plethora 
 
 And it has a huge community of developers which keeps pushing it further. Being an old software does certainly not make it outdated!!!!
 
-Have a look at this:
-
-https://www.openhub.net/p/emacs
+Have a look at [[https://www.openhub.net/p/emacs][this]].
 
 #+HTML: <br>
 
@@ -167,7 +163,7 @@ Major modes correspond to the language you are using. There can only be one majo
 #+BEGIN_QUOTE
 examples major modes:
 
-- org mode - awesomeness that I will introduce in 2 weeks
+- org mode—awesomeness that I will introduce in 2 weeks
 - text mode
 - emacs lisp mode
 - ESS (R) mode
@@ -181,6 +177,7 @@ Minor modes add options and there can be many minor modes simultaneously.
 example minor mode:
 
 - linun mode
+- aggressive-indent mode—auto indentation of code
 #+END_QUOTE
 
 ** Keybindings
@@ -203,7 +200,7 @@ C-c C-x means "press control-c THEN control x"
 
 emacs key combinations...
 
-Lots of C-c C-x etc...
+Lots of ~C-c C-x~, etc...
 
 *** Some useful keybindings to get started
 
@@ -248,7 +245,7 @@ Note that, in order to create a file, you must first "find" it, then "write" (sa
 | paste       | C-v        | yank           | C-y       |
 | -           | -          | yank next      | M-y       |
 
-(from: https://www.emacswiki.org/emacs/CopyAndPaste)
+(from: [[https://www.emacswiki.org/emacs/CopyAndPaste][emacswiki]])
 
 Yank next allows you to yank (paste) not the last thing that got killed (cut or copied) but the thing before that.
 
@@ -256,7 +253,7 @@ Yank next allows you to yank (paste) not the last thing that got killed (cut or 
 
 **** *Move around a file*
 
-Here are few examples of how you can navigate a file in emacs while never moving your hands off the keyboard and wihtout having to reach for?those awkwardly placed arrow keys:
+Here are few examples of how you can navigate a file in emacs while never moving your hands off the keyboard and wihtout having to reach for those awkwardly placed arrow keys:
 
 #+BEGIN_EXAMPLE
 C-f = move forward one character
@@ -424,7 +421,7 @@ customize-group
 customize-variable
 customize-face
 
-We will change the default face ("M-x customize-face default")
+We will change the default face (~M-x customize-face default~)
 
 ** The init file
 
@@ -487,11 +484,9 @@ This is just a short list. And of course, there are many other amazing packages 
 
 *** Install packages
 
-M-x list-packages
-
-# ** Example: ESS
+Packages can be installed with the command ~M-x list-packages~.
 
 #+HTML: <br>
 #+HTML: <br>
 
-@@html:<div style="font-size: 90%; background-color: #eee8d5; border: 1pt solid #93a1a1">@@This page was created using a modified version of a css style by Thomas Frössman (itself based on the solarized color theme from Ethan Schoonover), as well as parts of a modified version of the worg css stylesheet for the table of contents@@html:</div>@@
+@@html:<div style="font-size: 80%; background-color: #eee8d5; border: 1pt solid #c9cfcf; margin: 20px; padding: 5px 10px; border-radius: 5px; line-height: 18px">@@This page was inspired by a style from Thomas Frössman (itself based on the solarized color theme from Ethan Schoonover). The table of contents uses parts of a modified version of the worg css.@@html:</div>@@
