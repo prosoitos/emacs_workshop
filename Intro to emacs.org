@@ -5,8 +5,6 @@
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: html-style:t
 
-#+TODO: COMMENT | 
-
 #+TITLE:   Intro to emacs
 #+DATE:	   {{{time(%B %d\, %Y)}}}
 #+AUTHOR:  Marie-Helene Burle
@@ -40,8 +38,6 @@ Side note: once you have discovered Cygwin, you might become interested in addin
 
 See [[https://www.virtualbox.org/][here]].
 
-#+HTML: <br>
-
 * Today's program
 
 Here is our tentative program for today:
@@ -57,32 +53,30 @@ If time allows, we will also:
 # - learn to install a package (we will use ESS as an example)
 # - for those of you who are familiar with R, we will run R into ESS
 
-#+HTML: <br>
-
 * Rationale
 
 ** Why use text?
 
 - Makes you look cool
 
-\nbsp \nbsp \nbsp \nbsp (Well... maybe)
+(Well... maybe)
 
 - You can use version control
 
-\nbsp \nbsp \nbsp \nbsp Not just on your code, but on your papers, thesis, essays, books...
+Not just on your code, but on your papers, thesis, essays, books...
 
 - Freedom
 
-\nbsp \nbsp \nbsp \nbsp You are free from the constraints imposed by people who built the software you are using.\\
-\nbsp \nbsp \nbsp \nbsp You can create your own code to customize your own things (Think MS Word frustrations) :P
+You are free from the constraints imposed by people who built the software you are using.\\
+You can create your own code to customize your own things (Think MS Word frustrations) :P
 
 - Total inter-compatibility
 
-\nbsp \nbsp \nbsp \nbsp Nothing is proprietary. Every software can read text files.
+Nothing is proprietary. Every software can read text files.
 
 - Free (again)
 
-\nbsp \nbsp \nbsp \nbsp But as in no money this time.
+But as in no money this time.
 
 ** Why use emacs?
 
@@ -93,8 +87,6 @@ Emacs and Vim are the two most powerful of the lot. Emacs comes with a plethora 
 And it has a huge community of developers which keeps pushing it further. Being an old software does certainly not make it outdated!!!!
 
 Have a look at [[https://www.openhub.net/p/emacs][this]].
-
-#+HTML: <br>
 
 * Quick demo of some of the things that emacs can do
 
