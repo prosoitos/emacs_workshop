@@ -477,8 +477,3 @@ This is just a short list. And of course, there are many other amazing packages 
 *** Install packages
 
 Packages can be installed with the command ~M-x list-packages~.
-
-#+HTML: <br>
-#+HTML: <br>
-
-@@html:<div style="font-size: 80%; background-color: #eee8d5; border: 1pt solid #c9cfcf; margin: 20px; padding: 5px 10px; border-radius: 5px; line-height: 18px">@@This page was inspired by a style from Thomas Frössman (itself based on the solarized color theme from Ethan Schoonover). The table of contents uses parts of a modified version of the worg css.@@html:</div>@@
